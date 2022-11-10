@@ -3,7 +3,7 @@
 ---
 
 <li><strong>module.exports</strong> to export function, class, and variable.</li>
-<li>use <strong>import { function/class/variable } from "./path/to/file"</strong> to import function, class and variable</li>
+<li>use <strong>const variableName = require("./path/to/file")</strong> to import function, class and variable</li>
 <li>commonjs requires nodejs and npm in it</li>
 <li>in index.html file, when declare a entry point doesn't have to use <strong>type="module"</strong> in <strong>script</strong> tag</li>
 <li>commonjs requires webpack for module bundler</li>
