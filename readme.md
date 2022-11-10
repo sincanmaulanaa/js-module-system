@@ -1,69 +1,52 @@
-# SUMMARY IN WEBPACK
+# SUMMARY IN WEBPACK CONFIGURATION
 
-<li>Webpack is a tools which take Javascript codes that we use (including its dependency) and bundling or combining become a file (usually use in browser).</li>
-<br>
+## - Webpack installation using npm :
+
+```
+npm install webpack webpack-cli --save-dev
+```
+
+- `--save-dev` it means we store installed package in `"devDependencies"`
 
 ---
 
-#### BEFORE MODULE BUNDLER EXIST
-
-<ul>
-<li>We combine file manually</li>
-<li>What if there is a update from the library that we use?</li>
-<li>What if one library depend on other library (dependencies)?</li>
-</ul>
 <br>
 
-#### AFTER MODULE BUNDLER EXIST
+## - `package.json` script configuration :
 
-<ul>
-<li>Combine and management dependencies automatically</li>
-<li>Minify or uglify files so that the files size becomes smaller</li>
-</ul>
+```javascript
+"scripts": {
+    "build": "webpack"
+  }
+```
+
+---
+
 <br>
 
-#### REASON TO USE WEBPACK
+## - `webpack.config.js` configuration :
 
-<ul>
-<li>Many users from all over the world</li>
-<li>High popularity on Github platform</li>
-</ul>
+```javascript
+const path = require("path");
+
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "output"),
+    filename: "bundle.js",
+  },
+  watch: true,
+  devtool: false,
+};
+```
+
 <br>
 
-#### LACK OF WEBPACK
+### Key & value description
 
-<ul>
-<li>Slow during the build process</li>
-</ul>
-<br>
-
-#### WEBPACK FEATURES
-
-<ul>
-<li>Dependency management</li>
-<li>Hot module replacement</li>
-<li>Supported Modules : ES Modules, CommonJS, AMD Modules</li>
-</ul>
-<br>
-
-#### WEBPACK ADVANTAGES
-
-<ul>
-<li>Capable to transpile older JS for browser support</li>
-<li>Bundle CSS & Images</li>
-<li>Assets Optimization</li>
-<li>Increase developer productivity & experience</li>
-</ul>
-<br>
-
-#### WEBPACK COMPONENT CONFIGURATION
-
-<ul>
-<li>Entry Point</li>
-<li>Output file and directory</li>
-<li>Mode : Development or Production</li>
-<li>Loaders</li>
-<li>Plugins</li>
-<li>Browser Compatibility</li>
-</ul>
-<br>
+- `mode: "development"` this means that we are in development mode, generated build files will be readable and cleanfull if we compare with `mode: "production"`
+- `entry: "./src/index.js"` is the entry point of the app
+- `output` key have two property, `path` and `filename` which is use for specify directory and file name as a result of `npm run build`
+- `watch: true` use for watching when files has changed
+- `devtool: false` mean for remove eval function from generated file in output
