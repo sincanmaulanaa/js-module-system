@@ -1,3 +1,6 @@
+import * as bootstrap from "bootstrap";
+import css from "./style.scss";
+
 import { run } from "./app/app.js";
 
 import { AlertService } from "./app/alert.service.js";
@@ -9,5 +12,3 @@ const calculatorService = new CalculatorService();
 const jokesService = new JokesService();
 
 run(alertService, calculatorService, jokesService);
-
-alert("HALO SINCAN!");
