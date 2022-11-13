@@ -1,0 +1,11 @@
+$color: rgb(83, 12, 149);
+$bg: aquamarine;
+$primary: rgb(182, 52, 182);
+$danger: rgb(251, 127, 148);
+
+@import "bootstrap/scss/bootstrap";
+
+body {
+  color: $color;
+  background-color: $bg;
+}
